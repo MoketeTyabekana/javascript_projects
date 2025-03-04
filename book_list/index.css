@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  ;
+  
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    height: 100vh;
+    padding: 20px;
+}
+
+
+.books{
+    padding: 15px;
+    background-color: gray;
+    height: fit-content;
+    width: fit-content;
+}
+
+.heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  
+}
