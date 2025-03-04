@@ -10,6 +10,7 @@
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
   ;
   
+  
 }
 
 body {
@@ -40,6 +41,12 @@ body {
   
 }
 
+h1{
+    font-size: 1.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
  form{
     display: flex;
     flex-direction: column;
@@ -50,6 +57,11 @@ input{
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 5px;
+}
+
+label{
+    font-size: 1rem;
+    margin-bottom: 2px;
 }
 
 input:focus , button:focus{
@@ -64,4 +76,29 @@ button{
     color: white;
     cursor: pointer;
     font-weight: 600;
+}
+
+button:hover{
+    background-color: #A4B465;
+    transition: ease 0.6s;
+
+}
+
+.book-container{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+tr{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
 }

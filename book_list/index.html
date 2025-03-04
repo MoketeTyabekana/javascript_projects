@@ -1,40 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Book List</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="index.css" />
     <script defer src="books.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu_book" />
-</head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=two_pager" />
+  </head>
 
-<body>
+  <body>
     <div class="books">
-        <div class="heading">
-            <span class="material-symbols-outlined">
-                menu_book
-                </span>  <h1>My <span>Book</span> List</h1>
-        </div>
+      <div class="heading">
+        <span class="material-symbols-outlined" style="font-size: 48px">
+          two_pager
+        </span>
+        <h1>My <span>Book</span> List</h1>
+      </div>
 
-        <div class="bookInput">
-           <form class="bookInput" action="">
-            <label for="">Title</label>
-            <input type="text" name="" id="" placeholder="Book Title">
-            <label for="">Author</label>
-            <input type="text" name="" id="" placeholder="The Book Author">
-            <label for="">ISBN</label>
-            <input type="text" name="" id="" placeholder="Your Book ISBN">
-            <button>Add Book</button>
-           </form>
-           
-           
-           
-           
-           
-           
-        </div>
+      <div class="book-container bookInput">
+        <form class="bookInput" action="">
+          <label for="">Title</label>
+          <input type="text" name="" id="" placeholder="Book Title" />
+          <label for="">Author</label>
+          <input type="text" name="" id="" placeholder="The Book Author" />
+          <label for="">ISBN</label>
+          <input type="text" name="" id="" placeholder="Your Book ISBN" />
+          <button>Add Book</button>
+        </form>
 
+        <hr />
+
+        <div class="book-list">
+          <table>
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>ISBN#</th>
+                <th></th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
