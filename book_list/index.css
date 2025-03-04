@@ -19,7 +19,7 @@ body {
     /* align-items: center; */
     height: 100vh;
     padding: 20px;
-    background-color: #A4B465;
+    background: linear-gradient(30deg, #A4B465 0%, #405e01 60%);
 }
 
 
@@ -30,6 +30,7 @@ body {
     min-width: 500px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-top: 50px;
 }
 
 .heading {
