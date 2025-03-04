@@ -18,14 +18,17 @@ body {
     /* align-items: center; */
     height: 100vh;
     padding: 20px;
+    background-color: #A4B465;
 }
 
 
 .books{
     padding: 15px;
-    background-color: gray;
+    background-color: #f7f7f7fd;
     height: fit-content;
-    width: fit-content;
+    min-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .heading {
@@ -33,5 +36,32 @@ body {
   justify-content: center;
   align-items: center;
   gap: 10px;
+  color: #A4B465;
   
+}
+
+ form{
+    display: flex;
+    flex-direction: column;
+}
+
+input{
+    margin-bottom: 10px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input:focus , button:focus{
+    outline: none;
+}
+
+button{
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #626F47;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
 }
