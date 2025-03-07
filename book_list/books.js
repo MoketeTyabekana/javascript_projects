@@ -49,7 +49,7 @@ class UI {
 
   static showAlert(message, className) {
     const div = document.createElement("div");
-    div.className = `alert success deleted alert-${className}`;
+    div.className = `alert success alert-${className}`;
     div.appendChild(document.createTextNode(message));
     const container = document.querySelector(".book-container");
     const form = document.querySelector("#bookInput");
@@ -99,6 +99,6 @@ document.querySelector("#book-list").addEventListener("click", (e) => {
     e.target.parentElement.parentElement.remove();
 
      // Show delete message
- UI.showAlert("Book Deleted", "deleted");
+ UI.showAlert(`Book Deleted`, "deleted");
   }
 });
