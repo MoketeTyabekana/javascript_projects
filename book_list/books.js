@@ -44,10 +44,49 @@ class UI {
 
     list.appendChild(row);
   }
+
+  //   validate fields
+
+  static showAlert(message, className) {
+    const div = document.createElement("div");
+    div.className = `alert success deleted alert-${className}`;
+    div.appendChild(document.createTextNode(message));
+    const container = document.querySelector(".book-container");
+    const form = document.querySelector("#bookInput");
+    container.insertBefore(div, form);
+
+    // Vanish in 3 seconds
+    setTimeout(() => document.querySelector(".alert").remove(), 3000);
+  }
+}
+ 
+// Store Class: Handles Storage.
+class Store {
+    static getBooks() {
+        let books;
+        if (localStorage.getItem('books') === null) {
+            books = [];
+        } else {
+            books = JSON.parse(localStorage.getItem('books'));
+        }
+        return books;
+    }
+
+    static addBook(book) {
+        const books = Store.getBooks();
+        books.push(book);
+        localStorage.setItem('books', JSON.stringify(books));
+    }
+
+    static removeBook(isbn) {
+        const books = Store.getBooks();
+        const updatedBooks = books.filter(book => book.isbn !== isbn);
+        localStorage.setItem('books', JSON.stringify(updatedBooks));
+    }
 }
 
-// Store Class: Handles Storage.
 
+  
 // Event: Display Books.
 document.addEventListener("DOMContentLoaded", UI.displayBooks);
 
@@ -60,19 +99,29 @@ document.querySelector("#bookInput").addEventListener("submit", (e) => {
   const author = document.querySelector("#author").value;
   const isbn = document.querySelector("#isbn").value;
 
-  const book = new Book(title, author, isbn);
+  if (title === "" || author === "" || isbn === "") {
+    UI.showAlert("Please fill in all fields");
+  } else {
+    const book = new Book(title, author, isbn);
 
-  UI.addBookToList(book);
+    UI.addBookToList(book);
 
-  // Clear Fields
-  document.querySelector("#title").value = "";
-  document.querySelector("#author").value = "";
-  document.querySelector("#isbn").value = "";
+    // Show success message
+    UI.showAlert("Book Added", "success");
+
+    // Clear Fields
+    document.querySelector("#title").value = "";
+    document.querySelector("#author").value = "";
+    document.querySelector("#isbn").value = "";
+  }
 });
 
 // Event: Remove a Book.
 document.querySelector("#book-list").addEventListener("click", (e) => {
   if (e.target.classList.contains("delete")) {
     e.target.parentElement.parentElement.remove();
+
+     // Show delete message
+ UI.showAlert(`Book Deleted`, "deleted");
   }
 });

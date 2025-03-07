@@ -112,6 +112,7 @@ tr{
     cursor: pointer;
     color: white;
     text-decoration: none;
+    
 }
 
 .delete:hover{
@@ -122,6 +123,21 @@ tr{
 td{
     width: 100%;
     display: flex;
-    justify-content: left;
+    justify-content: space-between;
     align-items: center;
 }
+
+.alert{
+    padding: 10px;
+    background-color: #f44336;
+    color: white;
+    border-radius: 5px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+
