@@ -25,10 +25,14 @@ class UI {
       },
     ];
     const books = StoredBooks;
+
+    books.forEach((book) => UI.addBookToList(book));
   }
 }
 
 // Store Class: Handles Storage.
+
+
 
 // Event: Display Books.
 
