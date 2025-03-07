@@ -63,4 +63,9 @@ document.querySelector("#bookInput").addEventListener("submit", (e) => {
     const book = new Book(title, author, isbn);
 
     UI.addBookToList(book);
+
+    // Clear Fields
+    document.querySelector("#title").value = "";
+    document.querySelector("#author").value = "";
+    document.querySelector("#isbn").value = "";
 });
