@@ -49,7 +49,7 @@ class UI {
 
   static showAlert(message, className) {
     const div = document.createElement("div");
-    div.className = `alert alert-${className}`;
+    div.className = `alert success deleted alert-${className}`;
     div.appendChild(document.createTextNode(message));
     const container = document.querySelector(".book-container");
     const form = document.querySelector("#bookInput");
@@ -59,9 +59,11 @@ class UI {
     setTimeout(() => document.querySelector(".alert").remove(), 3000);
   }
 }
-
+ 
 // Store Class: Handles Storage.
 
+
+  
 // Event: Display Books.
 document.addEventListener("DOMContentLoaded", UI.displayBooks);
 
@@ -75,11 +77,14 @@ document.querySelector("#bookInput").addEventListener("submit", (e) => {
   const isbn = document.querySelector("#isbn").value;
 
   if (title === "" || author === "" || isbn === "") {
-    UI.showAlert("Please fill in all fields", "danger");
+    UI.showAlert("Please fill in all fields");
   } else {
     const book = new Book(title, author, isbn);
 
     UI.addBookToList(book);
+
+    // Show success message
+    UI.showAlert("Book Added", "success");
 
     // Clear Fields
     document.querySelector("#title").value = "";
@@ -92,5 +97,8 @@ document.querySelector("#bookInput").addEventListener("submit", (e) => {
 document.querySelector("#book-list").addEventListener("click", (e) => {
   if (e.target.classList.contains("delete")) {
     e.target.parentElement.parentElement.remove();
+
+     // Show delete message
+ UI.showAlert("Book Deleted", "deleted");
   }
 });

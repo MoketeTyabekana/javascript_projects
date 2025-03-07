@@ -137,3 +137,11 @@ td{
     justify-content: space-between;
     align-items: center;
 }
+
+.success{
+    background-color: #4CAF50;
+}
+
+.deleted{
+    background-color: #f44336;
+}
