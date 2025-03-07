@@ -112,6 +112,7 @@ tr{
     cursor: pointer;
     color: white;
     text-decoration: none;
+    
 }
 
 .delete:hover{
@@ -122,6 +123,6 @@ tr{
 td{
     width: 100%;
     display: flex;
-    justify-content: left;
+    justify-content: space-between;
     align-items: center;
 }
