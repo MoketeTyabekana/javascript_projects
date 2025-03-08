@@ -10,7 +10,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #570030;
+  background-color: #003f05;
   padding: 10%;
 }
 
@@ -46,17 +46,32 @@ h1,h3{
 }
 
 
-.btn{
+.btn, #next{
     padding: 10px;
     border: none;
     text-align: start;
     border-radius: 5px;
-    background-color: #380235;
+    background-color: transparent;
     color: #fff;
     cursor: pointer;
 }
 
+.btn{
+    border: #fff 1px solid;
+}
+
+#next{
+    margin-top: 20px;
+    background-color: green;
+    padding: 10px 20px;
+}
+
+#next:hover{
+    background-color: #003f05;
+    transition: 0.6s ease-in-out;
+}
+
 .btn:hover{
-    background-color: #570030;
+    background-color: green;
     transition: 0.6s ease-in-out;
 }
