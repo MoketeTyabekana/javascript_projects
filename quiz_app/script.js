@@ -92,3 +92,8 @@ const quizQuestions = [
     ],
   },
 ];
+
+
+const questionButton=document.getElementById('question');
+const answerbutton=document.getElementById('answers');
+const nextbutton=document.getElementById('next');
