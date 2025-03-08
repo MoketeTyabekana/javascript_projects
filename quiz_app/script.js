@@ -109,10 +109,10 @@ function startQuiz() {
 }
 
 function showQuestion() {
-  let currentQuestionIndex = quizQuestions[currentQuestionIndex];
-  let questionNum = (innerHTML = currentQuestionIndex + 1);
+  let currentQuestion = quizQuestions[currentQuestionIndex];
+  let questionNum = currentQuestionIndex + 1;
 
-  questionElement.innerHTML = questionNum + ". " + currentQuestion.question;
+  questionButton.innerHTML = questionNum + ". " + currentQuestion.question;
   answerbutton.innerHTML = "";
 
   currentQuestion.answers.forEach((answer) => {
@@ -122,3 +122,6 @@ function showQuestion() {
     answerbutton.appendChild(button);
   });
 }
+
+
+startQuiz();
