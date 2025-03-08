@@ -93,26 +93,54 @@ const quizQuestions = [
     },
 ];
 
+const questionButton = document.getElementById("question");
+const answerbutton = document.getElementById("answers");
+const nextbutton = document.getElementById("next");
 
-const questionButton=document.getElementById('question');
-const answerbutton=document.getElementById('answers');
-const nextbutton=document.getElementById('next');
+let currentQuestionIndex = 0;
+let score = 0;
 
-let currentQuestionIndex=0;
-let score=0;
-
-function startQuiz(){
-    currentQuestionIndex=0;
-    score=0;
-    nextbutton.innerHTML='Next';
-
+function startQuiz() {
+    currentQuestionIndex = 0;
+    score = 0;
+    nextbutton.innerHTML = "Next";
     showQuestion();
 }
 
-function showQuestion(){
-     let currentQuestionIndex=quizQuestions[currentQuestionIndex];
-     let questionNum=innerHTML=currentQuestionIndex+1;
+function showQuestion() {
+    let currentQuestion = quizQuestions[currentQuestionIndex];
+    let questionNum = currentQuestionIndex + 1;
 
-     questionElement.innerHTML=questionNum+'. '+currentQuestion.question;
-     answerbutton.innerHTML='';
+    questionButton.innerHTML = questionNum + ". " + currentQuestion.question;
+    answerbutton.innerHTML = "";
+
+    currentQuestion.answers.forEach((answer) => {
+        const button = document.createElement("button");
+        button.innerHTML = answer.text;
+        button.classList.add("btn");
+        answerbutton.appendChild(button);
+        button.addEventListener("click", () => selectAnswer(answer));
+    });
 }
+
+function selectAnswer(answer) {
+    if (answer.correct) {
+        score++;
+    }
+
+    if (currentQuestionIndex < quizQuestions.length - 1) {
+        currentQuestionIndex++;
+        showQuestion();
+    } else {
+        showScore();
+    }
+}
+
+function showScore() {
+    questionButton.innerHTML = `You scored ${score} out of ${quizQuestions.length}!`;
+    answerbutton.innerHTML = "";
+    nextbutton.innerHTML = "Restart";
+    nextbutton.addEventListener("click", startQuiz);
+}
+
+startQuiz();
