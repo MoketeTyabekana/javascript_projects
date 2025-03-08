@@ -93,7 +93,32 @@ const quizQuestions = [
   },
 ];
 
+const questionButton = document.getElementById("question");
+const answerbutton = document.getElementById("answers");
+const nextbutton = document.getElementById("next");
 
-const questionButton=document.getElementById('question');
-const answerbutton=document.getElementById('answers');
-const nextbutton=document.getElementById('next');
+let currentQuestionIndex = 0;
+let score = 0;
+
+function startQuiz() {
+  currentQuestionIndex = 0;
+  score = 0;
+  nextbutton.innerHTML = "Next";
+
+  showQuestion();
+}
+
+function showQuestion() {
+  let currentQuestionIndex = quizQuestions[currentQuestionIndex];
+  let questionNum = (innerHTML = currentQuestionIndex + 1);
+
+  questionElement.innerHTML = questionNum + ". " + currentQuestion.question;
+  answerbutton.innerHTML = "";
+
+  currentQuestion.answers.forEach((answer) => {
+    const button = document.createElement("button");
+    button.innerHTML = answer.text;
+    button.classList.add("btn");
+    answerbutton.appendChild(button);
+  });
+}
