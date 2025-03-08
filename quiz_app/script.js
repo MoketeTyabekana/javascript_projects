@@ -144,3 +144,6 @@ function showScore() {
 }
 
 startQuiz();
+
+
+startQuiz();
