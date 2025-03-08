@@ -10,20 +10,18 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #003f05;
+  background-color: #000d55;
   padding: 10%;
 }
 
 .container {
-width: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  
   gap: 10px;
   padding: 15px;
-
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.3);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
@@ -33,45 +31,47 @@ width: 100%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-h1,h3{
-    color: #fff;
-    text-align: center
+h1,
+h3 {
+  color: #fff;
+  text-align: center;
 }
 
-.answers{
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.answers {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-
-.btn, #next{
-    padding: 10px;
-    border: none;
-    text-align: start;
-    border-radius: 5px;
-    background-color: transparent;
-    color: #fff;
-    cursor: pointer;
+.btn,
+#next {
+  padding: 10px;
+  border: none;
+  text-align: start;
+  border-radius: 5px;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
 }
 
-.btn{
-    border: #fff 1px solid;
+.btn {
+  border: #fff 1px solid;
 }
 
-#next{
-    margin-top: 20px;
-    background-color: green;
-    padding: 10px 20px;
+#next {
+  margin-top: 20px;
+  background-color: #000d55;
+  padding: 10px 60px;
+  display: none;
 }
 
-#next:hover{
-    background-color: #003f05;
-    transition: 0.6s ease-in-out;
+#next:hover {
+  background-color: #000d55;
+  transition: 0.6s ease-in-out;
 }
 
-.btn:hover{
-    background-color: green;
-    transition: 0.6s ease-in-out;
+.btn:hover {
+  background-color: #000d55;
+  transition: 0.6s ease-in-out;
 }
