@@ -25,3 +25,21 @@ body{
     border-radius: 10px;
     width: 60%;
 }
+
+input, button{
+    width:100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+input:focus , button:focus{
+    outline: none;
+}
+
+button{
+    background-color: greenyellow;
+    font-weight: 600;
+    font-size: larger;
+    color: #005780;
+}
