@@ -37,9 +37,18 @@ input:focus , button:focus{
     outline: none;
 }
 
+
+
 button{
     background-color: greenyellow;
     font-weight: 600;
     font-size: larger;
     color: #005780;
+}
+
+button:hover{
+    color: #fff;
+    background-color: #008dce;
+    transition:ease-in-out 0.6s;
+    
 }
