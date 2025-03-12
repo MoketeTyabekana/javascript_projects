@@ -13,3 +13,15 @@ body{
     margin:0 auto ;
 }
 
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:15px;
+    background-color: #005780;
+    color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    width: 60%;
+}
