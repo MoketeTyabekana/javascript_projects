@@ -10,11 +10,12 @@
   <body>
     <div class="container">
       <h2>Temperature Converter</h2>
-      <input type="text" name="" id="celsius" placeholder="Enter Temperature" />
+      <input type="number" name="" id="celsius" placeholder="Enter Temperature" />
       <button onclick="convert()">Convert</button>
       <div class="results">
         <span>Temperature in Fahrenheit:</span>
         <p id="results"></p>
+        <button id="clearButton" onclick="clear()">Clear Data</button>
       </div>
     </div>
   </body>
