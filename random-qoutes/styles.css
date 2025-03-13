@@ -29,12 +29,18 @@ body{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
+h2{
+    align-self: center;
+}
+
 button{
     background-color: antiquewhite;
     border: none;
     border-radius: 5px;
     padding: 10px;
     width: 100%;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
 button:hover{
