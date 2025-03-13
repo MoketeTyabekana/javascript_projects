@@ -14,3 +14,17 @@ body{
     height: 100lvh;
     margin: 0;
 }
+
+.container{
+    width: 60%;
+    background-color: #8f5100;
+    padding: 15px;
+    border-radius: 10px;
+    color: #fff;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
