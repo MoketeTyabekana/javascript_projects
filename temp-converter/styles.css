@@ -68,8 +68,14 @@ p {
   width: 100%;
 }
 
+#clearButton{
+   
+    background-color: red;
+    margin: 10px 0 0 0;
+}
 
-@media screen and (max-width: 1020px) {
+
+@media screen and (max-width: 1200px) {
 body{
     padding: 5%;
 }
@@ -79,8 +85,7 @@ body{
     }
   }
 
-@media screen and (min-width: 1200px) {
-    .container {
-        width: 40%;
-    }
-}
+
+
+
+
