@@ -59,9 +59,20 @@ button:hover{
 }
 
 #quote{
+    text-align: center;
     width: 100%;
     background-color: antiquewhite;
     padding: 10px;
     border-radius: 5px;
     color: #8f5100;
+}
+
+@media screen and (min-width:300px) and (max-width:900px){
+.container{
+    width: 90%;
+}
+
+h2{
+    font-size: medium;
+}
 }
