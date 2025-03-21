@@ -8,9 +8,11 @@
 body {
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: auto;
+  gap: 20px;
 }
 
 .container {
@@ -22,7 +24,7 @@ body {
   background-color: #c5c5c5;
   padding: 20px;
 
-  box-shadow: 3px 3px 10px rgb(0, 0, 0,0.2);
+  box-shadow: 3px 3px 10px rgb(0, 0, 0, 0.2);
 }
 
 button,
@@ -41,6 +43,10 @@ button:focus {
   outline: none;
 }
 
+.results {
+  font-weight: 300;
+}
+
 button {
   background-color: #005353;
   font-weight: 800;
@@ -49,4 +55,39 @@ button {
 
 button:hover {
   background-color: #002b2b;
+}
+
+@media screen and (max-width: 650px) {
+  body {
+    padding: 10px;
+  }
+
+  .container {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .input {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .operators {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  button {
+    width: auto;
+    flex: 1;
+  }
 }
