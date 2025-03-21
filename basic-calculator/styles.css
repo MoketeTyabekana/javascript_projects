@@ -13,3 +13,9 @@ body{
     margin: auto;
 }
 
+.container{
+    min-width: 80%;
+    display: flex; 
+    justify-content: center;
+    gap: 15px;
+}
