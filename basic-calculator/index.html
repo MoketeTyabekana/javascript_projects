@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Basic Calculator</title>
     <script defer src="script.js"></script>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <div class="container">
-        <div class="input">
-            <input id="num1" type="number" placeholder="Number 1">
-            <input id="num2" type="number" placeholder="Number 2">
-        </div>
-            <button id="add">+</button>
-            <button id="divide">/</button>
-            <button id="subscript">-</button>
-            <button id="multiply">*</button>
-        <div class="calculators">
+      <div class="input">
+        <input id="num1" type="number" placeholder="Number 1" />
+        <input id="num2" type="number" placeholder="Number 2" />
+      </div>
 
-        </div>
+      <div class="operators">
+        <button id="add">+</button>
+        <button id="divide">/</button>
+        <button id="subscript">-</button>
+        <button id="multiply">*</button>
+      </div>
     </div>
-</body>
+
+    <div class="results">Results: <span id="results"></span></div>
+  </body>
 </html>
