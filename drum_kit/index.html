@@ -18,15 +18,100 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            padding: 5%;
+            background-color: #3f8300;
         }
-        
+
+        .container{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            padding: 15px;background-color: #ececec;
+            border-radius: 10px;
+            box-shadow: 5px 5px 5px rgb(0, 0, 0,0.1);
+        }
+
+        button{
+            display: flex;
+            flex-direction: column;
+            padding:5px;
+            min-width: 100px;
+            height: auto;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-weight: 600;
+            font-size: large;
+            
+        }
+
+        span{
+            font-weight: 100;
+            font-size: small;
+            
+        }
+
+        button:hover{
+            background-color: #3f8300;
+        }
+
+        button:focus{
+            outline: none;
+        }
 
     </style>
 </head>
 <body>
     <div class="container">
-        
+        <button class="btn-key" style="background-color: #c500ab;">
+            <kbd>K</kbd>
+            <span>Clap</span>
+        </button>
+
+        <button class="btn-key" style="background-color: #8b750f;">
+            <kbd>K</kbd>
+            <span>Hithat</span>
+        </button>
+
+        <button class="btn-key" style="background-color: #9b003b;">
+            <kbd>K</kbd>
+            <span>Kick</span>
+        </button>
+
+        <button class="btn-key" style="background-color: #9e5f00;">
+            <kbd>K</kbd>
+            <span>Openhat</span>
+        </button>
+
+        <button class="btn-key" style="background-color: #c50000;">
+            <kbd>K</kbd>
+            <span>Boom</span>
+        </button>
+
+        <button class="btn-key" style="background-color: #008f94;">
+            <kbd>K</kbd>
+            <span>Ride</span>
+        </button>
+
+        <button class="btn-key" style="background-color: #0010eb;">
+            <kbd>K</kbd>
+            <span>Snare</span>
+        </button>
+
+        <button class="btn-key" style="background-color: #ffa600;">
+            <kbd>K</kbd>
+            <span>Tink</span>
+        </button>
+
+        <button class="btn-key" style="background-color: #036400;">
+            <kbd>K</kbd>
+            <span>Tom</span>
+        </button>
     </div>
+
+    
 </body>
 
 <script>
