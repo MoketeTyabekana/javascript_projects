@@ -1,120 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Drum Kit</title>
-
     <style>
-        *{
-            margin: 0; 
-            padding: 0;
-            box-sizing: border-box;
-            font-family: sans-serif;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+      }
 
-        body{
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 5%;
-            background-color: #3f8300;
-        }
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5%;
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+      }
 
-        .container{
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            padding: 15px;background-color: #ececec;
-            border-radius: 10px;
-            box-shadow: 5px 5px 5px rgb(0, 0, 0,0.1);
+      @keyframes gradient {
+        0% {
+          background-position: 0% 50%;
         }
-
-        button{
-            display: flex;
-            flex-direction: column;
-            padding:5px;
-            min-width: 100px;
-            height: auto;
-            border: none;
-            border-radius: 5px;
-            color: #fff;
-            font-weight: 600;
-            font-size: large;
-            
+        50% {
+          background-position: 100% 50%;
         }
-
-        span{
-            font-weight: 100;
-            font-size: small;
-            
+        100% {
+          background-position: 0% 50%;
         }
+      }
 
-        button:hover{
-            background-color: #3f8300;
-        }
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        padding: 15px;
+        background-color: #ececec;
+        border-radius: 10px;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+      }
 
-        button:focus{
-            outline: none;
-        }
+      button {
+        display: flex;
+        flex-direction: column;
+        padding: 5px;
+        width: 100px;
+        height: auto;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        font-weight: 600;
+        font-size: large;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+        gap: 5px;
+        transition: transform 0.1s ease;
+        cursor: pointer;
+      }
 
+      button:hover {
+        background-color: #3f8300;
+      }
+
+      button:focus {
+        outline: none;
+      }
+
+      /* Click effect */
+      button.active {
+        transform: scale(0.95);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
+
+      span {
+        font-weight: 100;
+        font-size: small;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <button class="btn-key" style="background-color: #c500ab;">
-            <kbd>K</kbd>
-            <span>Clap</span>
-        </button>
+      <button class="btn-key" style="background-color: #c500ab">
+        <kbd>A</kbd>
+        <span>Clap</span>
+      </button>
 
-        <button class="btn-key" style="background-color: #8b750f;">
-            <kbd>K</kbd>
-            <span>Hithat</span>
-        </button>
+      <button class="btn-key" style="background-color: #8b750f">
+        <kbd>S</kbd>
+        <span>Hithat</span>
+      </button>
 
-        <button class="btn-key" style="background-color: #9b003b;">
-            <kbd>K</kbd>
-            <span>Kick</span>
-        </button>
+      <button class="btn-key" style="background-color: #9b003b">
+        <kbd>D</kbd>
+        <span>Kick</span>
+      </button>
 
-        <button class="btn-key" style="background-color: #9e5f00;">
-            <kbd>K</kbd>
-            <span>Openhat</span>
-        </button>
+      <button class="btn-key" style="background-color: #9e5f00">
+        <kbd>F</kbd>
+        <span>Openhat</span>
+      </button>
 
-        <button class="btn-key" style="background-color: #c50000;">
-            <kbd>K</kbd>
-            <span>Boom</span>
-        </button>
+      <button class="btn-key" style="background-color: #c50000">
+        <kbd>G</kbd>
+        <span>Boom</span>
+      </button>
 
-        <button class="btn-key" style="background-color: #008f94;">
-            <kbd>K</kbd>
-            <span>Ride</span>
-        </button>
+      <button class="btn-key" style="background-color: #008f94">
+        <kbd>H</kbd>
+        <span>Ride</span>
+      </button>
 
-        <button class="btn-key" style="background-color: #0010eb;">
-            <kbd>K</kbd>
-            <span>Snare</span>
-        </button>
+      <button class="btn-key" style="background-color: #0010eb">
+        <kbd>J</kbd>
+        <span>Snare</span>
+      </button>
 
-        <button class="btn-key" style="background-color: #ffa600;">
-            <kbd>K</kbd>
-            <span>Tink</span>
-        </button>
+      <button class="btn-key" style="background-color: #ffa600">
+        <kbd>I</kbd>
+        <span>Tink</span>
+      </button>
 
-        <button class="btn-key" style="background-color: #036400;">
-            <kbd>K</kbd>
-            <span>Tom</span>
-        </button>
+      <button class="btn-key" style="background-color: #036400">
+        <kbd>K</kbd>
+        <span>Tom</span>
+      </button>
     </div>
 
-    
-</body>
+    <!-- Audio elements with IDs matching the key letters -->
+    <audio id="sound-A" src="sounds/drumstep-heavy-drums_191bpm.wav"></audio>
+    <audio id="sound-S" src="sounds/snare-wikinger_A#_minor.wav"></audio>
+    <audio id="sound-D" src="sounds/snare-wikinger_A#_minor.wav"></audio>
+    <audio id="sound-F" src="sounds/drum-kick-slap-shot_G.wav"></audio>
+    <audio id="sound-G" src="sounds/house-kick-boomy.wav"></audio>
+    <audio id="sound-H" src="sounds/punchy-kick-clean-hit_A.wav"></audio>
+    <audio id="sound-J" src="sounds/snare-wikinger_A#_minor.wav"></audio>
+    <audio id="sound-I" src="sounds/drumstep-heavy-drums_191bpm.wav"></audio>
+    <audio id="sound-K" src="sounds/drum-kick-slap-shot_G.wav"></audio>
 
-<script>
+    <script>
+      function playSound(audio) {
+        if (!audio) return;
+        audio.currentTime = 0;
+        audio.play();
+      }
 
-</script>
+      const buttons = document.querySelectorAll(".btn-key");
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const key = button.querySelector("kbd").textContent.trim();
+
+          const audio = document.querySelector(`#sound-${key}`);
+          playSound(audio);
+
+          button.classList.add("active");
+          setTimeout(() => button.classList.remove("active"), 100);
+        });
+      });
+
+      window.addEventListener("keydown", (e) => {
+        const button = Array.from(document.querySelectorAll(".btn-key")).find(
+          (btn) => btn.querySelector("kbd").textContent.trim() === key
+        );
+        if (!button) return;
+
+        const audio = document.querySelector(`#sound-${key}`);
+        playSound(audio);
+
+        button.classList.add("active");
+        setTimeout(() => button.classList.remove("active"), 100);
+      });
+    </script>
+  </body>
 </html>
