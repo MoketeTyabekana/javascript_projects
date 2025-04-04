@@ -22,8 +22,8 @@ const ShoppingCart = () => {
        
       </nav>
 
-      <div className=" p-10 bg-white flex flex-row justify-between gap-4 ">
-        <ul className="grid grid-cols-3 gap-4 h-screen bg-gray-100 p-4 w-2/3 rounded-lg shadow-lg">
+      <div className=" md:p-10 bg-white flex md:flex-row  justify-between gap-4 ">
+        <ul className="grid md:grid-cols-3  gap-4 h-screen bg-gray-100 p-4 w-2/3 rounded-lg shadow-lg">
           {products.map((product) => (
             <li
               key={product.id}
