@@ -20,18 +20,18 @@ const ShoppingCart = () => {
         Shopping Cart
       </h1>
 
-      <div className=" p-10 bg-white ">
-        <ul className="grid grid-cols-5 gap-4">
+      <div className=" p-10 bg-white flex flex-row justify-between gap-4 ">
+        <ul className="grid grid-cols-3 gap-4 h-screen bg-gray-100 p-4 w-2/3 rounded-lg shadow-lg">
           {products.map((product) => (
             <li
               key={product.id}
-              className="flex flex-col h-auto  bg-white shadow-lg rounded-lg p-4 mb-4"
+              className="flex flex-col h-[300px] justify-between  bg-white shadow-lg rounded-lg p-4 mb-4"
             >
-              <div className="flex flex-col  items-center p-4">
+              <div className="flex flex-col items-center p-4">
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="w-25 h-auto "
+                  className="w-20 h-auto mb-6"
                 />
                 <div>
                   <h2 className="text-md font-bold">{product.name}</h2>
@@ -40,13 +40,17 @@ const ShoppingCart = () => {
               </div>
               <button
                 onClick={() => addToCart(product)}
-                className="bg-blue-500 text-white px-4 py-2 rounded"
+                className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-200 ease-in-out"
               >
                 Add to Cart
               </button>
             </li>
           ))}
         </ul>
+
+        <div className="bg-gray-100 h-screen w-1/3 p-4 rounded-lg shadow-lg flex flex-col justify-between">
+           <h1>List Items</h1>
+        </div>
       </div>
     </div>
   );
