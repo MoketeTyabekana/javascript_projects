@@ -49,21 +49,53 @@ const ShoppingCart = () => {
                 >
                   Add to Cart
                 </button>
-                <MdFavoriteBorder size={30}  className="ml-4 hover:text-blue-500" onClick={
-                    ()=> {
-                        alert("Added to wishlist");
-                        
-                    }
-                }/>
-
+                <MdFavoriteBorder
+                  size={30}
+                  className="ml-4 hover:text-blue-500"
+                  onClick={() => {
+                    alert("Added to wishlist");
+                  }}
+                />
               </div>
             </li>
           ))}
         </ul>
 
-        <div className="bg-gray-100 h-screen w-1/3 p-4 rounded-lg shadow-lg flex flex-col ">
-          <h1 className="text-xl font-bold text-blue-500">List Items</h1>
-          <hr className=" mt-2 border-1 text-blue-500  " />
+        <div className="bg-blue-500 h-screen w-1/3 p-4 rounded-lg shadow-lg flex flex-col ">
+          <div className="flex justify-between items-center mb-4">
+            <h1 className="text-xl font-bold text-gray-50">Cart Items</h1>
+            <p className="text-gray-50 font-bold">
+              Total: R{totalPrice.toFixed(2)}
+            </p>
+          </div>
+          <hr className=" my-2 border-1 text-gray-50  " />
+
+          <ul>
+            {cart.map((product) => (
+              <li
+                key={product.id}
+                className="flex justify-between items-center bg-white shadow-lg rounded-lg p-4 mb-4"
+              >
+                <img
+                  src={products.image}
+                  alt={product.name}
+                  className="w-20 h-auto"
+                />
+                <div className="flex flex-col">
+                  <h2 className="text-lg">{product.name}</h2>
+                  <p className="text-gray-900 font-bold">
+                    R{product.price.toFixed(2)}
+                  </p>
+                </div>
+                <button
+                  onClick={() => removeFromCart(product.id)}
+                  className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition duration-300 ease-in-out"
+                >
+                  Remove
+                </button>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>
