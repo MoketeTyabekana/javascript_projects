@@ -64,6 +64,11 @@
         cursor: pointer;
       }
 
+      .btn-key {
+        position: relative;
+        overflow: hidden;
+      }
+
       button:hover {
         background-color: #3f8300;
       }
@@ -72,7 +77,6 @@
         outline: none;
       }
 
-      /* Click effect */
       button.active {
         transform: scale(0.95);
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -81,6 +85,25 @@
       span {
         font-weight: 100;
         font-size: small;
+      }
+
+      .music-symbol {
+        position: absolute;
+        font-size: 24px;
+        color: rgba(255, 255, 255, 0.8);
+        pointer-events: none;
+        animation: floatUp 1s ease-out forwards;
+      }
+
+      @keyframes floatUp {
+        0% {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+        100% {
+          opacity: 0;
+          transform: translateY(-50px) scale(1.5);
+        }
       }
     </style>
   </head>
@@ -132,7 +155,6 @@
       </button>
     </div>
 
-    <!-- Audio elements with IDs matching the key letters -->
     <audio id="sound-A" src="sounds/drumstep-heavy-drums_191bpm.wav"></audio>
     <audio id="sound-S" src="sounds/snare-wikinger_A#_minor.wav"></audio>
     <audio id="sound-D" src="sounds/snare-wikinger_A#_minor.wav"></audio>
@@ -148,22 +170,51 @@
         if (!audio) return;
         audio.currentTime = 0;
         audio.play();
+
+        setTimeout(() => {
+          if (!audio.paused) {
+            audio.pause();
+          }
+        }, 1000);
+      }
+
+      function createMusicSymbol(button) {
+        const symbols = ["♪", "♫", "♩", "♬"];
+        const symbol = symbols[Math.floor(Math.random() * symbols.length)];
+
+        const span = document.createElement("span");
+        span.classList.add("music-symbol");
+        span.textContent = symbol;
+
+        span.style.left = `${Math.random() * 80}%`;
+
+        const randomRotation = Math.floor(Math.random() * 360);
+        span.style.transform = `rotate(${randomRotation}deg)`;
+
+        button.appendChild(span);
+
+        span.addEventListener("animationend", () => {
+          span.remove();
+        });
       }
 
       const buttons = document.querySelectorAll(".btn-key");
       buttons.forEach((button) => {
         button.addEventListener("click", () => {
           const key = button.querySelector("kbd").textContent.trim();
-
           const audio = document.querySelector(`#sound-${key}`);
           playSound(audio);
 
+          // Add click effect
           button.classList.add("active");
           setTimeout(() => button.classList.remove("active"), 100);
+
+          createMusicSymbol(button);
         });
       });
 
       window.addEventListener("keydown", (e) => {
+        const key = e.key.toUpperCase();
         const button = Array.from(document.querySelectorAll(".btn-key")).find(
           (btn) => btn.querySelector("kbd").textContent.trim() === key
         );
@@ -171,9 +222,9 @@
 
         const audio = document.querySelector(`#sound-${key}`);
         playSound(audio);
-
         button.classList.add("active");
         setTimeout(() => button.classList.remove("active"), 100);
+        createMusicSymbol(button);
       });
     </script>
   </body>
