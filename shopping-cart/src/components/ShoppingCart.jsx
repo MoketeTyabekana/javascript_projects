@@ -19,7 +19,7 @@ const ShoppingCart = () => {
     <div className=" flex flex-col h-screen bg-gray-50">
       <nav className="p-4 bg-blue-600 w-full flex justify-between items-center px-10">
         <h1 className="text-white font-bold text-xl ">Shopping Cart</h1>
-        <h1 className="text-white font-bold text-xl ">Shopping Cart</h1>
+       
       </nav>
 
       <div className=" p-10 bg-white flex flex-row justify-between gap-4 ">
@@ -44,7 +44,9 @@ const ShoppingCart = () => {
               </div>
               <div className="flex justify-between items-center ">
                 <button
-                  onClick={() => addToCart(product)}
+                  onClick={() => {
+                    addToCart(product);
+                  }}
                   className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300 ease-in-out w-full"
                 >
                   Add to Cart
