@@ -76,16 +76,18 @@ const ShoppingCart = () => {
                 key={product.id}
                 className="flex justify-between items-center bg-white shadow-lg rounded-lg p-4 mb-4"
               >
-                <img
-                  src={products.image}
-                  alt={product.name}
-                  className="w-20 h-auto"
-                />
-                <div className="flex flex-col">
-                  <h2 className="text-lg">{product.name}</h2>
-                  <p className="text-gray-900 font-bold">
-                    R{product.price.toFixed(2)}
-                  </p>
+                <div className="flex items-center gap-4">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-[32px] h-auto"
+                  />
+                  <div className="flex flex-col">
+                    <h2 className="text-lg">{product.name}</h2>
+                    <p className="text-gray-900 font-bold">
+                      R{product.price.toFixed(2)}
+                    </p>
+                  </div>
                 </div>
                 <button
                   onClick={() => removeFromCart(product.id)}
