@@ -30,3 +30,5 @@ This repository serves as a **learning journal** where I experiment, build, and 
 ## 📂 **How to Use This Repo**  
 Clone this repository and explore the projects:  
 ```sh
+https://github.com/MoketeTyabekana/javascript_projects
+
