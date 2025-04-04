@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { products } from "./products.jsx";
+import { MdFavoriteBorder } from "react-icons/md";
 
 const ShoppingCart = () => {
   const [cart, setCart] = useState([]);
@@ -36,22 +37,33 @@ const ShoppingCart = () => {
                 />
                 <div className="flex flex-col items-center">
                   <h2 className="text-lg">{product.name}</h2>
-                  <p className="text-gray-900  font-bold">R{product.price.toFixed(2)}</p>
+                  <p className="text-gray-900  font-bold">
+                    R{product.price.toFixed(2)}
+                  </p>
                 </div>
               </div>
-              <button
-                onClick={() => addToCart(product)}
-                className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300 ease-in-out"
-              >
-                Add to Cart
-              </button>
+              <div className="flex justify-between items-center ">
+                <button
+                  onClick={() => addToCart(product)}
+                  className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300 ease-in-out w-full"
+                >
+                  Add to Cart
+                </button>
+                <MdFavoriteBorder size={30}  className="ml-4 hover:text-blue-500" onClick={
+                    ()=> {
+                        alert("Added to wishlist");
+                        
+                    }
+                }/>
+
+              </div>
             </li>
           ))}
         </ul>
 
         <div className="bg-gray-100 h-screen w-1/3 p-4 rounded-lg shadow-lg flex flex-col ">
-           <h1 className="text-xl font-bold text-blue-500">List Items</h1>
-           <hr className=" mt-2 border-1 text-blue-500  " />
+          <h1 className="text-xl font-bold text-blue-500">List Items</h1>
+          <hr className=" mt-2 border-1 text-blue-500  " />
         </div>
       </div>
     </div>
