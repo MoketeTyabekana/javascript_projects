@@ -18,7 +18,7 @@ const ShoppingCart = () => {
   return (
     <div className=" flex flex-col h-screen bg-gray-50">
       <nav className="p-4 bg-blue-600 w-full flex justify-between items-center px-10">
-        <h1 className="text-white font-bold text-xl ">Shopping Cart</h1>
+        <h1 className="text-white font-bold text-xl ">EMT Store</h1>
        
       </nav>
 
@@ -85,7 +85,7 @@ const ShoppingCart = () => {
                     className="w-[32px] h-auto"
                   />
                   <div className="flex flex-col">
-                    <h2 className="text-lg">{product.name}</h2>
+                    <h2 className="text-sm">{product.name}</h2>
                     <p className="text-gray-900 font-bold">
                       R{product.price.toFixed(2)}
                     </p>
