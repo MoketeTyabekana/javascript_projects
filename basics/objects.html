@@ -4,31 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+
+    <style>
+        img{
+            width: 200px;
+        }
+    </style>
+
 </head>
 <body>
-    <ul id="productsList">
-
-    </ul>
+    <div id="productsList">
+        <!-- Products will be listed here -->
+    </div>
 </body>
 <script>
 
 const products=[
     {
         name: "socks",
-        price: "100"
+        price: "100",
+        picture:"https://assets.adidas.com/images/w_1880,f_auto,q_auto/1b7c33fb1cfe499d8852afc40090cf17_9366/IJ0733_01_01_00_standard.jpg"
     },
     {
         name:"head",
-       price:"200"
+       price:"200",
+        picture:"https://assets.adidas.com/images/w_1880,f_auto,q_auto/a2b956a1c41340f9b6dfafc201082ee6_9366/IB3242_01_standard.jpg"
     }
 ];
 
 const list = document.getElementById("productsList");
 
 products.forEach(product => {
-    const li = document.createElement("li");
-    li.textContent = `${product.name} - $${product.price}`;
-    list.appendChild(li);
+    // Create a list item for each product
+    const div = document.createElement("div");
+    const img = document.createElement("img");
+    const h2 = document.createElement("h2");
+    const p = document.createElement("p");  
+
+    document.getElementsByName("div").className = "product-item";
+
+    // Set the content of the elements
+    img.src = product.picture;
+    h2.textContent = product.name;
+    p.textContent = `Price: $${product.price}`;
+
+
+    // Append the elements to the list item
+    list.appendChild(div);
+    list.appendChild(img);
+    list.appendChild(h2);
+    list.appendChild(p);
 });
 
 
