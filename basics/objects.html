@@ -6,7 +6,9 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <ul id="productsList">
+
+    </ul>
 </body>
 <script>
 
@@ -21,7 +23,14 @@ const products=[
     }
 ];
 
-console.log(products) ;
+const list = document.getElementById("productsList");
+
+products.forEach(product => {
+    const li = document.createElement("li");
+    li.textContent = `${product.name} - $${product.price}`;
+    list.appendChild(li);
+});
+
 
 </script>
 </html>
