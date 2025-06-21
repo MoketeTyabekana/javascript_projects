@@ -1,12 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Array Methods
-</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Methods</title>
+  </head>
+  <body>
+
+    <h1>Array Methods Example</h1>
+    <div id="names"></div>
+
+    <script>
+      const names = ["Alice", "Bob", "Charlie", "David"];
+      const greetings = names.map((name) => `Hello, ${name}!`);
+      console.log(greetings);
+
+       
+
+
+
+      names.forEach((name) => {
+         const namesDiv = document.getElementById("names");
+            const p = document.createElement("p");
+            p.textContent = `Hello, ${name}!`;
+            namesDiv.appendChild(p);
+      });
+    </script>
+  </body>
 </html>
