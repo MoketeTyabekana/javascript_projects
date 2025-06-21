@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Manipulation</title>
+  </head>
+  <body>
+    <p id="hello">Hello World</p>
+    <ul id="listItems"></ul>
+    <button id="clear">Clear</button>
+    <p id="remove">Remove this message</p>
+
+    <script>
+      // Change the text content of the paragraph with id "hello"
+      document.getElementById("hello").textContent = "Hello, DOM Manipulation!";
+
+      // Create a new list item and append it to the list
+      const list = document.getElementById("listItems");
+      const item = document.createElement("li");
+      item.textContent = "Item 1";
+      list.appendChild(item);
+
+    document.getElementById("clear").addEventListener("click", removeItem);
+
+    function removeItem(){
+       document.getElementById("remove").remove(); 
+
+    }
+    </script>
+  </body>
+</html>
