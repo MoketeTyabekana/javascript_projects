@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Manipulation</title>
+  </head>
+  <body>
+    <p id="hello">Hello World</p>
+    <ul id="listItems"></ul>
+    <button id="clear">Clear</button>
+    <p id="remove">Remove this message</p>
+    <div class="change">
+    </div>
+
+<!-- Toggle button  -->
+ <p id="info">I am visible</p>
+ <button id="toggle" onclick="toggle()">Hide</button>
+
+
+    <script>
+      // Change the text content of the paragraph with id "hello"
+      document.getElementById("hello").textContent = "Hello, DOM Manipulation!";
+
+      // Create a new list item and append it to the list
+      const list = document.getElementById("listItems");
+      const item = document.createElement("li");
+      item.textContent = "Item 1";
+      list.appendChild(item);
+
+        // Create another list item and append it to the list
+    document.getElementById("clear").addEventListener("click", removeItem);
+
+    function removeItem(){
+       document.getElementById("remove").remove(); 
+    }
+
+    //Change class name
+    document.getElementById("change").className = "newClass";
+
+  // Toggle visibility of an element
+  function toggle(){
+
+    const el=document.getElementById("info");
+    if(el.style.display === "none"){
+      el.style.display = "block";
+    } else {
+      el.style.display = "none";
+      document.getElementById("toggle").textContent = "Show";
+    }
+
+  }
+
+    </script>
+  </body>
+</html>
