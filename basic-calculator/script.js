@@ -17,6 +17,7 @@ function multiply(number1, number2) {
 
 document.querySelectorAll('.operation').forEach(button => {
     button.addEventListener('click', function () {
+        
         const number1 = parseFloat(document.getElementById('num1').value.trim()) || 0;
         const number2 = parseFloat(document.getElementById('num2').value.trim()) || 0;
 

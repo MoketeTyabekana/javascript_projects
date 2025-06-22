@@ -41,7 +41,7 @@ button:focus {
 }
 
 button {
-  background-color: #388db4;
+  background-color: #20ad00;
   font-weight: 600;
   font-size: larger;
   color: #fff;
@@ -49,7 +49,7 @@ button {
 
 button:hover {
   color: #fff;
-  background-color: #008dce;
+  background-color: #136500;
   transition: ease-in-out 0.6s;
 }
 
