@@ -1,5 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Methods</title>
+  </head>
+  <body>
+
+    <h1>Array Methods Example</h1>
+    <div id="names"></div>
+
+    <script>
+      const names = ["Alice", "Bob", "Charlie", "David"];
+      const greetings = names.map((name) => `Hello, ${name}!`);
+      console.log(greetings);
+
+       
+
+
+
+      names.forEach((name) => {
+         const namesDiv = document.getElementById("names");
+            const p = document.createElement("p");
+            p.textContent = `Hello, ${name}!`;
+            namesDiv.appendChild(p);
+      });
+    </script>
+  </body>
+</html>
+=======
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,3 +40,4 @@
     
 </body>
 </html>
+>>>>>>> 9b2014fe094fecacf4501058ebad25fcb3784284
