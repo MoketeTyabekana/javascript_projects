@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Quote Generator</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #a16d28;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .content {
+        width: 60%;
+
+        background-color: #ffffffab;
+        padding: 20px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: #dedede 1px solid;
+        gap: 15px;
+      }
+
+      button {
+        padding: 10px;
+        background-color: #a16d28;
+        border-radius: 5px;
+        width: 40%;
+        color: #ffffff;
+        font-size: 18px;
+        border: none;
+        font-weight: 600;
+      }
+
+      button:hover {
+        background-color: #754200;
+        transition: all ease-in-out 0.3s;
+      }
+
+      h1 {
+        color: #754200;
+        text-transform: uppercase;
+        border-bottom: #754200 3px solid;
+        margin-bottom: 10px;
+        width: 100%;
+        text-align: center;
+      }
+
+      #quote {
+        padding: 20px;
+        background-color: #dadada;
+        border-radius: 5px;
+        color: #999999;
+        text-align: center;
+        width: 100%;
+      }
+
+      @media screen and (max-width: 750px) {
+        body {
+          padding: 2px;
+        }
+        .content {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <h1>Random Quote Generator</h1>
+
+      <div id="quote">Your Quote Will Appear Here...</div>
+
+      <button type="submit" id="generate">New Quote</button>
+    </div>
+
+    <script>
+      document.getElementById("generate").addEventListener("click", getQuote);
+
+      async function getQuote() {
+        const res = await fetch("https://dummyjson.com/quotes/random");
+        const data = await res.json();
+
+        document.getElementById("quote").style.color = "#a16d28";
+
+        document.getElementById(
+          "quote"
+        ).textContent = `"${data.quote}" -${data.author}`;
+      }
+    </script>
+  </body>
+</html>
