@@ -50,7 +50,7 @@
         transition: all ease-in-out 0.3s;
       }
 
-      h1{
+      h1 {
         color: #754200;
         text-transform: uppercase;
         border-bottom: #754200 3px solid;
@@ -80,16 +80,16 @@
   </head>
   <body>
     <div class="content">
-     <h1>Random Quote Generator</h1>
+      <h1>Random Quote Generator</h1>
 
       <div id="quote">Your Quote Will Appear Here...</div>
 
-      <button type="submit" id="generate" onclick="getQuote()">
-        New Quote
-      </button>
+      <button type="submit" id="generate">New Quote</button>
     </div>
 
     <script>
+      document.getElementById("generate").addEventListener("click", getQuote);
+
       async function getQuote() {
         const res = await fetch("https://dummyjson.com/quotes/random");
         const data = await res.json();
