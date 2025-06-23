@@ -57,12 +57,14 @@
     </div>
 
     <script>
+
         async function getQuote(){
             const res= await fetch('https://dummyjson.com/quotes/random');
             const data=await res.json();
 
             document.getElementById("quote").textContent=`"${data.quote}" -${data.author}`;
         }
+        
     </script>
   </body>
 </html>
