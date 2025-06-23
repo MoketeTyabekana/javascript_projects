@@ -1,30 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Random Quote Generator</title>
     <style>
-        body{
-            
-        }
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .content {
+        width: 60%;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: #dedede 1px solid;
+        gap: 10px;
+      }
+
+      button {
+        padding: 10px;
+        background-color: #00274b;
+        border-radius: 5px;
+        width: 100%;
+        color: #ffffff;
+        font-size: 18px;
+        border: none;
+      }
+
+      #quote {
+        padding: 20px;
+        background-color: #dadada;
+        border-radius: 5px;
+        color: #00274b;
+        font-weight: 600;
+        text-align: center;
+      }
+
     </style>
-</head>
-<body>
-
+  </head>
+  <body>
     <div class="content">
-        <p id="quote">
+      <div id="quote">
+      
+      </div>
 
-            <span id="author">
-
-            </span>
-        </p>
-
-        <button>New Quote</button>
+      <button id="generate" onclick="getQuote()">New Quote</button>
     </div>
-    
-    <script>
 
+    <script>
+        async function getQuote(){
+            const res= await fetch('https://dummyjson.com/quotes/random');
+            const data=await res.json();
+
+            document.getElementById("quote").textContent=`"${data.quote}" -${data.author}`;
+        }
     </script>
-</body>
+  </body>
 </html>
