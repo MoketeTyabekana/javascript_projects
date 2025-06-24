@@ -16,14 +16,21 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #a16d28;
+        background-image: url("https://images.unsplash.com/photo-1744649781353-8a1b70c37a77?q=80&w=1217&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
         font-family: Arial, Helvetica, sans-serif;
       }
 
       .content {
         width: 60%;
-
-        background-color: #ffffffab;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
         padding: 20px;
         border-radius: 10px;
         display: flex;
@@ -36,7 +43,7 @@
 
       button {
         padding: 10px;
-        background-color: #a16d28;
+        background-color: #002248;
         border-radius: 5px;
         width: 40%;
         color: #ffffff;
@@ -46,14 +53,14 @@
       }
 
       button:hover {
-        background-color: #754200;
+        background-color: #000e1f;
         transition: all ease-in-out 0.3s;
       }
 
       h1 {
-        color: #754200;
+        color: #002248;
         text-transform: uppercase;
-        border-bottom: #754200 3px solid;
+        border-bottom: #002248 3px solid;
         margin-bottom: 10px;
         width: 100%;
         text-align: center;
@@ -68,12 +75,16 @@
         width: 100%;
       }
 
-      @media screen and (max-width: 750px) {
+      @media screen and (max-width: 900px) {
         body {
-          padding: 2px;
+          padding: 10%;
         }
         .content {
           width: 100%;
+        }
+
+        h1{
+          font-size: large;
         }
       }
     </style>
@@ -94,7 +105,7 @@
         const res = await fetch("https://dummyjson.com/quotes/random");
         const data = await res.json();
 
-        document.getElementById("quote").style.color = "#a16d28";
+        document.getElementById("quote").style.color = "#002248";
 
         document.getElementById(
           "quote"
