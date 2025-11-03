@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+
+    //basic function
+    function greet(name){
+        return `hello, ${name}!`;
+    }
+    console.log(greet("Mokete"));
+
+
+    //Arrow function
+   const add =(a,b) => a + b;
+   console.log(add(5,3));
+
+
+   function multiplier(factor){
+    return function(number){
+        return number * factor;
+    }
+   }
+
+   const double = multiplier(2);
+   console.log(double(5)); 
+
+
+   function square (number){
+    return function square(){
+        return Math.sqrt(number);
+    }
+   }
+
+   let sq = square(16);
+   console.log(sq());
+
+
+   function applyTwice(fn,value){
+
+    return fn(fn(value));
+   }
+   
+let value = 10;
+let result = applyTwice(x => x + 5, value);
+console.log(result);
+   
+</script>
+
+</html>

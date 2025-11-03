@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="bg">
+    <h1 id="title" style="color: red;">Hello</h1>
+    <button onclick="changetext()">
+        Click Me!
+    </button>
+
+    <button onclick="bgChange()">
+   Change Background
+</button>
+</body>
+
+<script>
+ function changetext(){
+    document.getElementById("title").innerText="Clicked!"
+ }
+
+function bgChange(){
+    document.getElementById("bg");
+
+    if(document.body.style.backgroundColor=="lightblue"){
+        document.body.style.backgroundColor="white";
+    } else {
+        document.body.style.backgroundColor="lightblue";
+    }
+}
+
+</script>
+</html>

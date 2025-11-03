@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let user = {
+  name: "Mokete",
+  age: 25,
+  skills: ["HTML", "CSS", "React"],
+  
+  greet() {
+   const jsonString=JSON.stringify(user);
+   console.log(jsonString)
+  },
+};
+
+user.greet();
+
+
+let car={
+  make: "Toyota",
+  model: "Corolla",
+  year: 2020,
+  
+  getCarInfo() {
+    return `${this.year} ${this.make} ${this.model}`;
+  },
+};
+
+console.log(car.getCarInfo());
+
+</script>
+</html>
