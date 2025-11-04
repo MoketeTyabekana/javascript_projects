@@ -6,62 +6,73 @@
     <title>Document</title>
   </head>
   <body>
+    <input type="text" id="expense-name" placeholder="Enter expense name" />
     <input type="text" id="amount" placeholder="Enter expense amount" />
+
     <p id="errorMessage" style="color: red"></p>
     <button onclick="addExpense()">Add Expense</button>
 
     <ul id="expense-list"></ul>
+    <p id="totalDisplay"><strong>Total:</strong> R0</p>
   </body>
 
   <script>
-   const myExpenses = JSON.parse(localStorage.getItem("expenses")) || [];
-
+    const myExpenses = JSON.parse(localStorage.getItem("expenses")) || [];
 
     function addExpense() {
       const list = document.getElementById("expense-list");
       const inputElement = document.getElementById("amount");
+      const nameElement = document.getElementById("expense-name");
       const userinput = inputElement.value;
+      const nameInput = nameElement.value;
 
-      if (isNaN(userinput) || userinput.trim() === "") {
+      if (
+        isNaN(userinput) ||
+        userinput.trim() === "" ||
+        nameInput.trim() === ""
+      ) {
         document.getElementById("errorMessage").innerText =
           "Please enter a valid number.";
         return;
       } else {
         document.getElementById("errorMessage").innerText = "";
-      } 
+      }
 
-       myExpenses.push(Number(userinput));
-       localStorage.setItem("expenses", JSON.stringify(myExpenses));
-       inputElement.value = "";
+      myExpenses.push({ name: nameInput, amount: Number(userinput) });
+      localStorage.setItem("expenses", JSON.stringify(myExpenses));
 
+      inputElement.value = "";
+      nameElement.value = "";
 
-        renderExpenses();
-
+      renderExpenses();
     }
 
+    function renderExpenses() {
+      const list = document.getElementById("expense-list");
+      const totalDisplay = document.getElementById("totalDisplay");
+      list.innerHTML = "";
 
-    function renderExpenses(){
-        const list=document.getElementById("expense-list");
-        list.innerHTML="";
+      let total = 0;
 
-        myExpenses.forEach((expense, index)=>{
-            const listItem=document.createElement("li");
-            listItem.textContent=expense+" ";
+      myExpenses.forEach((expense, index) => {
+        const listItem = document.createElement("li");
+        listItem.textContent = `${expense.name}: R${expense.amount} `;
+        total += expense.amount;
+        totalDisplay.innerHTML = `<strong>Total:</strong> R${total}`;
+        
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent = "X";
 
-            const deleteButton=document.createElement("button");
-            deleteButton.textContent="Delete";
+        deleteButton.onclick = function () {
+          myExpenses.splice(index, 1);
+          localStorage.setItem("expenses", JSON.stringify(myExpenses));
+          renderExpenses();
+        };
 
-            deleteButton.onclick=function(){
-              myExpenses.splice(index,1);
-              localStorage.setItem("expenses", JSON.stringify(myExpenses));
-                renderExpenses();
-            };
-
-            listItem.appendChild(deleteButton);
-            list.appendChild(listItem);
-        })
+        listItem.appendChild(deleteButton);
+        list.appendChild(listItem);
+      });
     }
-window.onload = renderExpenses;
-
+    window.onload = renderExpenses;
   </script>
 </html>
