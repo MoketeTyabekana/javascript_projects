@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+
+    const user={
+        name: "Mokete",
+        age: 25,
+        city: "Johannesburg",
+        skills: {
+            frontEnd: "React",
+            backEnd: "Node.js",
+            database: "MongoDB"
+        }
+    };
+
+    const {name, age, city, skills: {frontEnd, backEnd, database}} = user;  
+
+    console.log(`My name is ${name}, I am ${age} years old and I live in ${city}.`);
+    console.log(`I specialize in ${frontEnd} for front-end development, ${backEnd} for back-end development, and use ${database} as my database.`);
+
+</script>
+</html>

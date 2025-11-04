@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="amount" placeholder="Enter expense amount" />
+    <p id="errorMessage" style="color: red"></p>
+    <button onclick="addExpense()">Add Expense</button>
+
+    <ul id="expense-list"></ul>
+  </body>
+
+  <script>
+   const myExpenses = JSON.parse(localStorage.getItem("expenses")) || [];
+
+
+    function addExpense() {
+      const list = document.getElementById("expense-list");
+      const inputElement = document.getElementById("amount");
+      const userinput = inputElement.value;
+
+      if (isNaN(userinput) || userinput.trim() === "") {
+        document.getElementById("errorMessage").innerText =
+          "Please enter a valid number.";
+        return;
+      } else {
+        document.getElementById("errorMessage").innerText = "";
+      } 
+
+       myExpenses.push(Number(userinput));
+       localStorage.setItem("expenses", JSON.stringify(myExpenses));
+       inputElement.value = "";
+
+
+        renderExpenses();
+
+    }
+
+
+    function renderExpenses(){
+        const list=document.getElementById("expense-list");
+        list.innerHTML="";
+
+        myExpenses.forEach((expense, index)=>{
+            const listItem=document.createElement("li");
+            listItem.textContent=expense+" ";
+
+            const deleteButton=document.createElement("button");
+            deleteButton.textContent="Delete";
+
+            deleteButton.onclick=function(){
+              myExpenses.splice(index,1);
+              localStorage.setItem("expenses", JSON.stringify(myExpenses));
+                renderExpenses();
+            };
+
+            listItem.appendChild(deleteButton);
+            list.appendChild(listItem);
+        })
+    }
+window.onload = renderExpenses;
+
+  </script>
+</html>
